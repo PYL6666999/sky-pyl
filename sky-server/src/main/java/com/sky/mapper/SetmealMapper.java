@@ -1,0 +1,19 @@
+package com.sky.mapper;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+
+/**
+ * @description：TODO
+ * @author： Pyl
+ * @create： 2025/5/29 13:06
+ */
+@Mapper
+public interface SetmealMapper {
+
+    /**
+     * 根据分类id查询套餐的数量
+     */
+    @Select("select count(id) from setmeal where category_id = #{categoryId}")
+    Integer countByCategoryId(Long id);
+}
