@@ -1,7 +1,11 @@
 package com.sky.mapper;
 
+import com.sky.entity.Setmeal;
+import com.sky.enumeration.OperationType;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * @description：TODO
@@ -16,4 +20,24 @@ public interface SetmealMapper {
      */
     @Select("select count(id) from setmeal where category_id = #{categoryId}")
     Integer countByCategoryId(Long id);
+
+    /**
+     * 根据id修改套餐
+     *
+     * @param setmeal
+     */
+
+    void update(Setmeal setmeal);
+
+    @Mapper
+    public interface SetmealDishMapper {
+        List<Long> getSetmealIdsByDishIds(List<Long> dishIds);
+    }
+
+    /**
+     * 新增套餐
+     * @param setmeal
+     */
+    public void insert(Setmeal setmeal);
+
 }
