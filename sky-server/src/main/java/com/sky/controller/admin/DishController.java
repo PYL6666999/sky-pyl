@@ -1,7 +1,6 @@
 package com.sky.controller.admin;
 
 import com.sky.entity.Dish;
-import com.sky.mapper.SetmealMapper;
 import com.sky.result.Result;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

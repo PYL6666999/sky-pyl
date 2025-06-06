@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.sky.entity.Category;
-import com.sky.service.CategoryService;
+
 import java.util.List;
 
 /**
@@ -61,7 +61,7 @@ public class CategoryController {
      */
     @DeleteMapping
     @ApiOperation("删除分类")
-    public Result<String> deleteById(Long id){
+    public Result<String> deleteById(@RequestParam Long id){
         log.info("删除分类：{}", id);
         categoryService.deleteById(id);
         return Result.success();

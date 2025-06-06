@@ -55,6 +55,7 @@ public class CategoryServiceImpl implements CategoryService {
         //设置创建时间、修改时间、创建人、修改人
         category.setCreateTime(LocalDateTime.now());
         category.setUpdateTime(LocalDateTime.now());
+        System.out.println(BaseContext.getCurrentId());
         category.setCreateUser(BaseContext.getCurrentId());
         category.setUpdateUser(BaseContext.getCurrentId());
 
